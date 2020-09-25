@@ -2,7 +2,6 @@ provider "google" {
   version = "~> 3.35.0"
   project = var.project_id
   region  = var.region
-  #zone    = "australia-southeast1-[a b c]"
   user_project_override = true
 }
 

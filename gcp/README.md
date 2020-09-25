@@ -10,7 +10,7 @@ Read [Getting Started with the Google Provider](https://www.terraform.io/docs/pr
 
 See the official terraform [kubernetes engine module](https://registry.terraform.io/modules/terraform-google-modules/kubernetes-engine/google/3.0.0) used in this code.
 
-## Deploy a minimal GKE cluster
+## Deploy a network and minimal GKE cluster
 
 ```sh
 ## Set the GCP project Id.
@@ -33,7 +33,7 @@ kubectl cluster-info
 
 ## Install Load Balancer. See https://hub.helm.sh/charts/ingress-nginx/ingress-nginx
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm install place-os -n ingress-nginx --create-namespace  ingress-nginx/ingress-nginx
+helm install placeos -n ingress-nginx --create-namespace  ingress-nginx/ingress-nginx
 
 ```
 
