@@ -9,9 +9,12 @@ provider external { version = "~> 1.2.0" }
 provider null { version = "~> 2.1.2" }
 provider random { version = "~> 2.3.0" }
 
+resource "random_id" "unique" {
+  byte_length = 4
+}
 
 resource "google_compute_network" "gke_vpc_network" {
-  name                    = "gke-placeos"
+  name                    = "gke-placeos-${random_id.unique.hex}"
   project                 = var.project_id
   auto_create_subnetworks = false
 }
@@ -37,7 +40,7 @@ module "gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google"
   version                    = "11.1.0"
   project_id                 = var.project_id
-  name                       = "placeos"
+  name                       = "gke-placeos-${random_id.unique.hex}"
   region                     = var.region
   zones                      = var.zones
   network                    = google_compute_network.gke_vpc_network.name
