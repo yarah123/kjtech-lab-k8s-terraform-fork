@@ -37,7 +37,7 @@ helm install placeos -n ingress-nginx --create-namespace  ingress-nginx/ingress-
 
 ```
 
-**Note**: by adding the annotations in the ingress controller `LoadBalancer` service you can have the loadbalancer expose an internal IP address only. See [internal-load-balancing](https://cloud.google.com/kubernetes-engine/docs/how-to/internal-load-balancing)
+**Note**: by adding the annotations in the ingress controller `LoadBalancer` service you can alternatively expose loadbalancer over an internal IP address only. See [internal-load-balancing](https://cloud.google.com/kubernetes-engine/docs/how-to/internal-load-balancing)
 
 Get the IP address of the GCP LoadBalancer Nginx is bound to. You will need this when you install the PlaceOS charts
 
