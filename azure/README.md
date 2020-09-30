@@ -72,10 +72,10 @@ Get the IP address of the Azure LoadBalancer Nginx is bound to. You will need th
 # Get the status of the loadbalancer
 kubectl get svc -n ingress-nginx
 NAME                                          TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
-place-os-ingress-nginx-controller             LoadBalancer   xx.xx.xx.xx      xx.xx.xx.xx     80:31307/TCP,443:31092/TCP   83s
+placeos-ingress-nginx-controller             LoadBalancer   xx.xx.xx.xx      xx.xx.xx.xx     80:31307/TCP,443:31092/TCP   83s
 
 # extract the public ip
-kubectl get svc -n ingress-nginx place-os-ingress-nginx-controller -o=jsonpath='{.status.loadBalancer.ingress[*].ip}'
+kubectl get svc -n ingress-nginx placeos-ingress-nginx-controller -o=jsonpath='{.status.loadBalancer.ingress[*].ip}'
 
 ```
 
