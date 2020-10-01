@@ -84,6 +84,8 @@ The extracted IP address needs to be added to the variable `global.placeDomain` 
 ## Cleanup Deployment
 
 ```sh
+unset KUBECONFIG
+
 # cleanup after
 terraform plan --destroy
 terraform destroy
