@@ -29,7 +29,8 @@ Deploy a loadbalancer to expose the PlaceOS back office application and APIs.
 terraform output cluster_name
 # retrive and set local kubeconfig file to access the GKE cluster
 gcloud container clusters get-credentials [THE CLUSTER NAME] --region australia-southeast1 --project ${TF_VAR_project_id}
-
+#eg using the terraform command to retreive the cluster name dynamically
+gcloud container clusters get-credentials $( terraform output cluster_name )  --region australia-southeast1 --project ${TF_VAR_project_id}
 # validate your local kube config settings
 kubectl cluster-info
 
