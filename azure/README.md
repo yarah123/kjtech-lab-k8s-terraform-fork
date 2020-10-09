@@ -54,6 +54,8 @@ kubectl get nodes
 
 Deploy a loadbalancer to expose the PlaceOS back office application and APIs.
 
+**NOTE**: Not required if deploying PlaceOS with the provided ansible scripts in the k8s-helm repository
+
 ```sh
 
 ## Install Load Balancer. See https://hub.helm.sh/charts/ingress-nginx/ingress-nginx

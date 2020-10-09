@@ -24,6 +24,8 @@ terraform apply
 
 Deploy a cloud loadbalancer to expose the PlaceOS back office application and APIs.
 
+**NOTE**: Not required if deploying PlaceOS with the provided ansible scripts in the k8s-helm repository
+
 ```sh
 # get the name of the gke cluster:
 terraform output cluster_name
