@@ -22,7 +22,7 @@ terraform apply
 
 ```
 
-Deploy a loadbalancer to expose the PlaceOS back office application and APIs.
+Deploy a cloud loadbalancer to expose the PlaceOS back office application and APIs.
 
 ```sh
 # get the name of the gke cluster:
