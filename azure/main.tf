@@ -18,9 +18,10 @@ resource "azurerm_kubernetes_cluster" "placeos" {
 
 
     default_node_pool {
-        name            = "agentpool"
-        node_count      = 3
-        vm_size         = "Standard_D2_v2"
+        name               = "agentpool"
+        node_count         = 3
+        vm_size            = "Standard_D2_v2"
+        availability_zones =  ["1", "2", "3"]
     }
 
     service_principal {
@@ -35,6 +36,6 @@ resource "azurerm_kubernetes_cluster" "placeos" {
     }
 
     tags = {
-        Environment = "Development"
+        Environment = "Production"
     }
 }
