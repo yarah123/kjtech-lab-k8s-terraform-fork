@@ -64,7 +64,7 @@ module "gke" {
       image_type         = "COS"
       auto_repair        = true
       auto_upgrade       = true
-      preemptible        = true
+      preemptible        = false
       initial_node_count = 1
     },
   ]
