@@ -20,7 +20,7 @@ resource "google_compute_network" "gke_vpc_network" {
 }
 
 resource "google_compute_subnetwork" "gke_subnetwork" {
-  name          = "gke-placeos"
+  name          = "gke-placeos-${random_id.unique.hex}"
   ip_cidr_range = "10.1.0.0/24"
   region        = var.region
   network       = google_compute_network.gke_vpc_network.id
@@ -47,7 +47,7 @@ module "gke" {
   subnetwork                 = google_compute_subnetwork.gke_subnetwork.name
   ip_range_pods              = "placeos-secondary-pod"
   ip_range_services          = "placeos-secondary-svc"
-  http_load_balancing        = false
+  http_load_balancing        = var.http_loadbalancing
   horizontal_pod_autoscaling = true
   network_policy             = true
   logging_service            = "none"
