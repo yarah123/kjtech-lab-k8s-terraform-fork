@@ -5,6 +5,13 @@ provider "google" {
   user_project_override = true
 }
 
+provider "google-beta" {
+  version = "~> 3.62"
+  project = var.project_id
+  region  = var.region
+  user_project_override = true
+}
+
 provider external { version = "~> 1.2.0" }
 provider null { version = "~> 2.1.2" }
 provider random { version = "~> 2.3.0" }
@@ -101,4 +108,10 @@ module "gke" {
       "placeos-node-pool",
     ]
   }
+}
+
+resource "google_compute_global_address" "l7_ip" {
+  provider      = google-beta
+  name          = "l7-ip"
+  address_type  = var.google_compute_address_type
 }

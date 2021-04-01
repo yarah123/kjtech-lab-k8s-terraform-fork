@@ -15,3 +15,8 @@ variable http_loadbalancing {
     type = bool
     default = false
 }
+
+variable "google_compute_address_type" {
+    description = "will backoffice lb be a private or a public ip address"
+    default = "EXTERNAL"
+}
