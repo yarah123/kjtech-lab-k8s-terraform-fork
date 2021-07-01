@@ -1,5 +1,5 @@
 provider "google" {
-  version = "~> 3.35.0"
+  version = "~> 3.41.0"
   project = var.project_id
   region  = var.region
   user_project_override = true
@@ -44,8 +44,8 @@ resource "google_compute_subnetwork" "gke_subnetwork" {
 }
 
 module "gke" {
-  source                     = "terraform-google-modules/kubernetes-engine/google"
-  version                    = "11.1.0"
+  source                     = "terraform-google-modules/kubernetes-engine/google//modules/private-cluster"
+  version                    = "15.0.1"
   project_id                 = var.project_id
   name                       = "gke-placeos-${random_id.unique.hex}"
   region                     = var.region
@@ -59,7 +59,9 @@ module "gke" {
   network_policy             = true
   logging_service            = "none"
   monitoring_service         = "none"
-  create_service_account       = false
+  create_service_account     = false
+  enable_private_endpoint    = false
+  enable_private_nodes       = true
   node_pools = [
     {
       name               = "placeos-node-pool"
