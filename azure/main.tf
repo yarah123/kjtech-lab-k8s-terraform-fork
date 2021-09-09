@@ -20,7 +20,7 @@ resource "azurerm_kubernetes_cluster" "placeos" {
     default_node_pool {
         name            = "agentpool"
         node_count      = 3
-        vm_size         = "Standard_D2_v2"
+        vm_size         = "Standard_D2_v3"
     }
 
     service_principal {
