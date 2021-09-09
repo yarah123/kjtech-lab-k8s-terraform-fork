@@ -35,6 +35,6 @@ resource "azurerm_kubernetes_cluster" "placeos" {
     }
 
     tags = {
-        Environment = "Development"
+        Environment = "Production"
     }
 }
