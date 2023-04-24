@@ -1,5 +1,6 @@
 output "client_key" {
     value = azurerm_kubernetes_cluster.placeos.kube_config.0.client_key
+    sensitive = true
 }
 
 output "client_certificate" {
@@ -16,10 +17,12 @@ output "cluster_username" {
 
 output "cluster_password" {
     value = azurerm_kubernetes_cluster.placeos.kube_config.0.password
+    sensitive = true
 }
 
 output "kube_config" {
     value = azurerm_kubernetes_cluster.placeos.kube_config_raw
+    sensitive = true
 }
 
 output "host" {

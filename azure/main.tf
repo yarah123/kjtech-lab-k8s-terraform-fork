@@ -23,9 +23,8 @@ resource "azurerm_kubernetes_cluster" "placeos" {
         vm_size         = "Standard_D2_v3"
     }
 
-    service_principal {
-        client_id     = var.aks_sp_app_id
-        client_secret = var.aks_sp_app_pw
+    identity {
+      type = "SystemAssigned"
     }
 
     network_profile {
