@@ -7,6 +7,7 @@ Deploy a minimal AKS cluster for PoCs and testing PlaceOS
 Terraform version 1.4.5
 
 
+
 Read [Getting Started with the Azure Provider](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) to set up your environment.
 
 See the terraform page [Create K8s Cluster with TF and AKS](https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks) used in this code.
@@ -26,11 +27,19 @@ az account set --subscription=[ YOUR SUBSCRIPTIION ID ]
 
 Set the Resource Group Name that AKS will be deployed to in the terraform.tfvars file: `resource_group_name=[RESOURCE GROUP NAME]`
 
+Set the Environment variable to define VM size and Tag for the cluster in the terraform.tfvars file, eg: `environment="Production"`
+    - "Development" by default
+    - "Production" will deploy suitable prod VMs
+    - Anything else will deploy suitable dev VMs
+
 Provision the infrastructure:
 
 ```sh
 ## Alternative to setting resource_group_name in terraform.tfvars file
 export TF_VAR_resource_group_name=[RESOURCE GROUP NAME]
+
+## Alternative to setting environment in terraform.tfvars file
+export TF_VAR_environment=[ENVIRONMENT NAME]
 
 ## Initialise, plan and execute terraform
 terraform init

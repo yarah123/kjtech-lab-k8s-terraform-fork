@@ -12,7 +12,7 @@ resource "azurerm_kubernetes_cluster" "placeos" {
     default_node_pool {
         name            = "agentpool"
         node_count      = 3
-        vm_size         = "Standard_D2_v3"
+        vm_size         = var.environment == "Production" ? "Standard_DS11_v2" : "Standard_D2_v3"
     }
 
     identity {
@@ -26,6 +26,6 @@ resource "azurerm_kubernetes_cluster" "placeos" {
     }
 
     tags = {
-        Environment = "Production"
+        Environment = var.environment
     }
 }
