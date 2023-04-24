@@ -8,7 +8,7 @@ Terraform version 1.4.5
 
 
 
-Read [Getting Started with the Azure Provider](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) to set up your environment.
+Read [Getting Started with the Azure Provider](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) for information on the use of Terraform with Azure
 
 See the terraform page [Create K8s Cluster with TF and AKS](https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks) used in this code.
 
