@@ -4,7 +4,7 @@ Deploy a minimal AKS cluster for PoCs and testing PlaceOS
 
 ## Prerequisites
 
-Terraform version 0.13.3
+Terraform version 1.4.5
 
 
 Read [Getting Started with the Azure Provider](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) to set up your environment.

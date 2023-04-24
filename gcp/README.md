@@ -4,7 +4,7 @@ Deploy a minimal GKE cluster for PoCs and testing PlaceOS
 
 ## Prerequisites
 
-Terraform version 0.13.3
+Terraform version 1.4.5
 
 Read [Getting Started with the Google Provider](https://www.terraform.io/docs/providers/google/guides/getting_started.html) to set up your environment.
 
