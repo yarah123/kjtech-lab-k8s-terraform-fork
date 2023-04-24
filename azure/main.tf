@@ -1,11 +1,3 @@
-provider "azurerm" {
-  version = "~> 2.92.0"
-  features {}
-  #skip_provider_registration = true
-}
-
-provider "random"{ version = "~> 2.3.0"}
-
 resource "random_id" "unique" {
   byte_length = 4
 }
@@ -28,7 +20,7 @@ resource "azurerm_kubernetes_cluster" "placeos" {
     }
 
     network_profile {
-      load_balancer_sku = "Standard"
+      load_balancer_sku = "standard"
       network_plugin = "kubenet"
       network_policy = "calico"
     }
